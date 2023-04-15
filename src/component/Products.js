@@ -41,7 +41,7 @@ const Products = () => {
                     cardIndex === index
                       ? 'bg-white shadow-2xl'
                       : 'border border-black'
-                  } w-[350px] h-[550px] rounded-[12px] p-[40px] cursor-pointer transition-all`}
+                  } h-[550px] rounded-[12px] p-[40px] cursor-pointer transition-all`}
                 >
                   {/* card icon */}
                   <div className='mb-8'>
