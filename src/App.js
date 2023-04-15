@@ -4,9 +4,9 @@ import 'aos/dist/aos.css';
 import Navbar from './component/Navbar';
 // import Overview from './component/Overview';
 import Hero from './component/Hero';
-import Product from './component/Product';
 import Recents from './component/Recents';
 import Footer from './component/Footer';
+import Products from './component/Products';
 
 
 
@@ -19,10 +19,10 @@ function App() {
     <div className='overflow-hidden'>
       <Navbar/>
       <Hero/>
-      <Product/>
+      <Products/>
       <Recents/>
-      <Footer/>
       {/* <Overview/> */}
+      <Footer/>
     </div>
   );
 }

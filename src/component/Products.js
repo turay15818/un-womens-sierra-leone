@@ -2,30 +2,30 @@ import React, { useState } from 'react';
 // import data
 import { pricing } from '../data';
 // import icons
-import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
+import { HiCheck, HiOutlineArrowNarrowRight } from 'react-icons/hi';
 
-const Product = () => {
+const Products = () => {
   // index state
   const [index, setIndex] = useState(1);
   // destructure pricing
   const { title, cards } = pricing;
   return (
-    <section className='section mb-100'>
-      <div className='container'>
+    <section className='section'>
+      <div className='container mx-auto'>
         {/* title */}
-        <h2
-          className='h2 mb-10  text-center text-4xl '
+        <h6
+          className='h2 mb-10 lg:mb-20 text-center text-3xl'
           data-aos='fade-up'
           data-aos-delay='200'
         >
           {title}
-        </h2>
+        </h6>
         {/* cards */}
-        <div className='flex flex-row xl:flex-row gap-y-5  
-        p-10 grid grid-cols-1 sm:grid-cols-1 grid-cols-1 lg:grid-cols-1 lg:grid-cols-4 gap-x-6 ml-100'>
+        <div className='flex flex-col lg:flex-row lg:gap-x-[60px] gap-y-[60px] lg:gap-y-6 justify-center items-center
+        p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 lg:grid-cols-3 gap-x-20 justify-center items-center '>
           {cards.map((card, cardIndex) => {
             // destructure card
-            const { image, title, name, price, userAmount, btnText, delay } =
+            const { image, title,price, userAmount, btnText, delay } =
               card;
             // card
             return (
@@ -41,7 +41,7 @@ const Product = () => {
                     cardIndex === index
                       ? 'bg-white shadow-2xl'
                       : 'border border-black'
-                  } w-[250px] h-[550px] rounded-[12px] p-[40px] cursor-pointer transition-all gap-x-40 ml-40 `}
+                  } w-[350px] h-[550px] rounded-[12px] p-[40px] cursor-pointer transition-all`}
                 >
                   {/* card icon */}
                   <div className='mb-8'>
@@ -49,18 +49,15 @@ const Product = () => {
                   </div>
                   {/* card title */}
                   <div className='text-[20px] font-semibold mb-8 text-3xl '>{title}</div>
-               
                   <div className='mb-10'>
                     <div>
                       <span className='text-2xl font-semibold'>{price}/</span>
-                  
                       <span className='text-xl text-light font-light'>
                         year
                       </span>
                     </div>
                     <div className='text-base text-light'>{userAmount}</div>
                   </div>
-                  <div className='text-[20px] font-semibold mb-8 text-2xl '>{name}</div>
                   {/* btn */}
                   <button
                     className={`${
@@ -82,4 +79,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Products;
